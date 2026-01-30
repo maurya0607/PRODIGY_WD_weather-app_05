@@ -1,0 +1,155 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Poppins', sans-serif;
+}
+
+body {
+  background: linear-gradient(135deg, #0f172a, #020617);
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #e5e7eb;
+}
+
+.app {
+  width: 360px;
+  background: #020617;
+  padding: 30px;
+  border-radius: 18px;
+  text-align: center;
+  box-shadow: 0 20px 40px rgba(0,0,0,0.5);
+}
+
+h1 {
+  color: #38bdf8;
+  margin-bottom: 6px;
+}
+
+.subtitle {
+  font-size: 14px;
+  color: #94a3b8;
+  margin-bottom: 25px;
+}
+
+.search-box {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 25px;
+}
+
+.search-box input {
+  flex: 1;
+  padding: 10px;
+  border-radius: 8px;
+  border: none;
+  outline: none;
+  font-size: 14px;
+}
+
+.search-box button {
+  background: #38bdf8;
+  color: #020617;
+  border: none;
+  padding: 10px 15px;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: 600;
+  transition: 0.3s;
+}
+
+.search-box button:hover {
+  background: #0ea5e9;
+}
+
+.weather-card {
+  background: #020617;
+  padding: 20px;
+  border-radius: 14px;
+  border: 1px solid #1e293b;
+}
+
+.weather-card h2 {
+  font-size: 22px;
+  margin-bottom: 5px;
+}
+
+.weather-card p {
+  color: #94a3b8;
+  font-size: 14px;
+}
+
+.weather-card h3 {
+  font-size: 40px;
+  margin: 10px 0;
+  color: #facc15;
+}
+
+.details {
+  display: flex;
+  justify-content: space-between;
+  font-size: 13px;
+  color: #cbd5f5;
+}
+
+/****************************************************/
+/* ===============================
+   UI Enhancements (Safe Add-on)
+   =============================== */
+
+/* Input focus glow */
+.search-box input:focus {
+  box-shadow: 0 0 0 2px rgba(56, 189, 248, 0.4);
+}
+
+/* Button interaction */
+.search-box button {
+  transition: background 0.3s ease, transform 0.2s ease;
+}
+
+.search-box button:active {
+  transform: scale(0.96);
+}
+
+/* Weather card motion */
+.weather-card {
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.weather-card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 28px 55px rgba(0, 0, 0, 0.6);
+}
+
+/* Smooth text update */
+.weather-card h2,
+.weather-card p,
+.weather-card h3,
+.details span {
+  transition: opacity 0.3s ease;
+}
+
+/* Subtle fade-in effect */
+.weather-card.loaded {
+  animation: fadeIn 0.4s ease-in-out;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(6px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Mobile safe width */
+@media (max-width: 420px) {
+  .app {
+    width: 92%;
+  }
+}
